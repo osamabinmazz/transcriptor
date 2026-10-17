@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Guía del transcriptor</title>
+  <script>try { const t = localStorage.getItem('tema'); if (t) document.documentElement.dataset.tema = t; } catch {}</script>
+  <link rel="stylesheet" href="css/app.css">
+  <style>
+    .guia h2 { margin-top: 28px; }
+    .guia ol, .guia ul { padding-left: 22px; }
+    .guia li { margin: 8px 0; }
+    .guia code { font-size: 15px; background: var(--hoja); border: 1px solid var(--linea); border-radius: 6px; padding: 2px 6px; }
+    .guia .nota-caja { background: var(--hoja); border-left: 4px solid var(--h1); padding: 10px 14px; border-radius: 4px; }
+  </style>
+</head>
+<body>
+  <main class="guia">
+    <p><a href="./" class="volver">Volver a la app</a></p>
+    <h1>Cómo usar el transcriptor</h1>
+
+    <h2>En la PC</h2>
+    <p>Ya está instalado y arranca solo cuando prendés la PC. Para abrirlo, usá el acceso <strong>Transcriptor</strong> del escritorio (carpeta <em>Aplicaciones y juegos / Creacion e IA</em>). También podés arrastrar un audio a la ventana.</p>
+    <p>Las entrevistas quedan en <code>Documentos\Transcripciones</code>: cada una tiene su audio y un <code>texto.txt</code>. Lo que borrás va a <code>Transcripciones\_papelera</code>.</p>
+
+    <h2 id="web">En el celular: versión web</h2>
+    <p>No hace falta instalar nada más. Transcribe con el servicio online (sección siguiente), separa las voces y hace el resumen.</p>
+    <ol>
+      <li>En el celular, abrí <strong>Chrome</strong> y entrá a la dirección de la app en GitHub (termina en <code>github.io/transcriptor</code>).</li>
+      <li>Tocá el menú <strong>⋮</strong> y elegí <strong>Instalar app</strong> (o <em>Agregar a la pantalla principal</em>). Queda el ícono "Entrevistas" como cualquier app.</li>
+      <li>Abrila, andá a <strong>Ajustes</strong> y pegá tu clave de Speechmatics.</li>
+    </ol>
+    <p class="nota-caja">Las entrevistas de la versión web quedan guardadas en el celular. Para tenerlas en la PC, exportalas en Word o compartilas.</p>
+
+    <h2 id="celular">Opcional: el celular conectado a tu PC</h2>
+    <p>Si querés que el celular use la PC para transcribir (gratis, sin gastar crédito) y que todo quede también en la PC, se usa <strong>Tailscale</strong>: una conexión privada y gratis entre tus aparatos.</p>
+    <ol>
+      <li>En la PC: bajá Tailscale de <a href="https://tailscale.com/download/windows">tailscale.com/download</a>, instalalo y entrá con tu cuenta de Google.</li>
+      <li>En la PC, abrí una terminal y escribí: <code>tailscale serve --bg 8770</code>. Si te pide habilitar HTTPS, abrí el enlace que aparece y aceptá. Al final te muestra una dirección del estilo <code>https://tu-pc.algo.ts.net</code>.</li>
+      <li>En el celular: instalá <strong>Tailscale</strong> desde Play Store y entrá con la misma cuenta.</li>
+      <li>En el celular, abrí Chrome y entrá a la dirección del paso 2.</li>
+      <li>Tocá el menú <strong>⋮</strong> y elegí <strong>Instalar app</strong> (o <em>Agregar a la pantalla principal</em>). Queda un ícono "Entrevistas" como cualquier app.</li>
+    </ol>
+    <p class="nota-caja">La app del celular abre aunque la PC esté apagada. Lo que grabes queda guardado en el teléfono y se pasa a la PC cuando vuelve a estar prendida.</p>
+
+    <h2 id="online">Servicio online (Speechmatics)</h2>
+    <ol>
+      <li>Entrá a <a href="https://www.speechmatics.com">speechmatics.com</a> y creá una cuenta gratis (no pide tarjeta). Te dan crédito para muchas horas de audio durante 12 meses.</li>
+      <li>En el portal de Speechmatics, buscá <strong>API Keys</strong> y creá una clave nueva. Copiala.</li>
+      <li>En la app: <strong>Ajustes → Servicio online</strong>, pegá la clave y tocá <strong>Guardar clave</strong>. Hacelo en cada aparato donde lo quieras usar.</li>
+    </ol>
+    <p>Cuando se termina el crédito, el servicio se frena: no cobra nada. La app te avisa.</p>
+
+    <h2>Uso diario</h2>
+    <ul>
+      <li><strong>Grabar entrevista</strong>: dejá la pantalla encendida. Se guarda sola cada 5 segundos; si algo se corta, al volver a abrir la app te ofrece recuperarla.</li>
+      <li><strong>Subir audio o video</strong>: sirve para audios de WhatsApp, grabadora, videos, etc.</li>
+      <li>Antes de transcribir elegís cuántas personas hablan (ayuda mucho a separar las voces) y con qué transcribir: <strong>Automático</strong> usa la PC si está prendida y, si no, el servicio online.</li>
+      <li>En la entrevista: tocá una frase para escucharla. Con <strong>Corregir</strong> podés arreglar palabras y, si una frase quedó con la persona equivocada, cambiar quién la dice desde la barra de abajo.</li>
+      <li>Tocá el nombre de cada persona (Hablante 1, Hablante 2) para ponerle su nombre real.</li>
+      <li><strong>Copiar</strong>, <strong>Word</strong> y <strong>Compartir</strong> mandan el texto con los nombres. En el menú <strong>⋯</strong> están el .txt, los subtítulos .srt y Borrar.</li>
+      <li>El buscador de la pantalla principal busca en todas las entrevistas.</li>
+    </ul>
+
+    <h2>Si algo no anda</h2>
+    <ul>
+      <li>Arriba a la derecha dice <strong>PC conectada</strong>, <strong>Sin PC</strong> o <strong>Sin internet</strong>.</li>
+      <li>Si en la PC dice "Sin PC": cerrá sesión y volvé a entrar en Windows, o hacé doble clic en <code>C:\AI-Tools\Transcriptor\instalar\arrancar.vbs</code>.</li>
+      <li>Desde el celular afuera de casa: revisá que Tailscale esté activado en los dos aparatos.</li>
+      <li>La herramienta vieja de arrastrar un archivo sigue funcionando, ahora con el modelo nuevo.</li>
+    </ul>
+  </main>
+</body>
+</html>

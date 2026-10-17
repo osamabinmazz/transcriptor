@@ -1,0 +1,16 @@
+{
+  "name": "Transcriptor de entrevistas",
+  "short_name": "Entrevistas",
+  "description": "Grabá o subí entrevistas y obtené el texto separado por persona.",
+  "lang": "es",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#EEF2F0",
+  "theme_color": "#1C2A33",
+  "icons": [
+    { "src": "iconos/192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "iconos/512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "iconos/512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ]
+}
